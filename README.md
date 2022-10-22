@@ -5,5 +5,5 @@ https://raffles-university.edu.my/international-python-coding-school-challenge-2
 
 I am Teo Jun Jia, please enjoy my project by following method:
 ```
-python JunJIa_Teo.py
+python JunJia_Teo.py
 ```
