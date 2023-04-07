@@ -80,8 +80,8 @@ for i in range(1,6):
             print("Please enter an integer between 0 and 100.")
             
     while mark<0 or mark>100:
-        print("["+i+"]")
-        mark=input("Enter value between 0 and 100: ")
+        print("[",i,"]")
+        mark=int(input("Enter value between 0 and 100: "))
         
     lis.append(mark)
     if mark>89:
