@@ -4,18 +4,21 @@ import random
 import string
 
 #Challenge 1
-print('{:^100s}'.format('\033[1m'+"[CHALLENGE 1]"+'\033[0m'))
+lis=[]
+print("\t\t\t\t  [CHALLENGE 1]")
 time.sleep(1)
-print('{:^92s}'.format("**The Runner-Up**"))
+print("\t\t\t\t**The Runner-Up**")
 
 time.sleep(2)
 print("\nAMY: Hi, I'm AMY, your bot")
 time.sleep(2)
 print("AMY: First, we need a list of integers")
 time.sleep(2)
-print("\nIf you wish to key in the list by yourself, input "+'\033[1;31;47m 0 \033[0;0m')
+print("AMY: I will then find the second largest integer from the list")
+time.sleep(2)
+print("\nIf you wish to key in the list by yourself, input 0")
 time.sleep(1)
-print("If you wish to get a random list of number, input "+'\033[1;31;47m 1 \033[0;0m')
+print("If you wish to get a random list of number, input 1")
 time.sleep(1)
 
 while True:
@@ -26,16 +29,25 @@ while True:
         if n==0 or n==1: 
             break
         else:
-            print("Plese enter 0 or 1 iONLY")
+            print("Please enter 0 or 1 iONLY")
     except:
         print("Please enter 0 or 1 ONLY to make decision.")
 
 if n==0:
-    print("\nEnter numbers seperated by space")
-    lis=list(map(int,input("Enter the numbers: ").strip().split()))
+    while not lis or len(lis)<2:
+        try:
+            time.sleep(1)
+            print("\nEnter integers seperated by space, minimum 2 integers are required")
+            lis=list(map(int,input("Enter the numbers: ").strip().split()))
+            if len(lis)<2:
+                print("You must provide a list of integers, minimum 2 integers in it")
+                time.sleep(1)
+        except:
+            print("Invalid data found! Please enter INTEGERS ONLY separated by spaces")
+            time.sleep(1)
 
 if n==1:
-    print("\x1B[3m" + "\nGenerating integer list in progress......"+'\x1B[0m')
+    print("\nGenerating integer list in progress......")
     lis=[]
     count=random.randint(1,100)
     no=random.randint(1,100)
@@ -48,20 +60,19 @@ if n==1:
     print(lis)
 
 time.sleep(3)
-print('\x1B[3m'+"\nFinding......"+'\x1B[0m')
+print("\nFinding......")
 lis.sort(reverse=True)
-lis=list(dict.fromkeys(lis))
 time.sleep(2)
 print("The second largest number is ", lis[1])
 
 time.sleep(5)
 #CHALLENGE 2
 print("\n\n")
-print('{:^100s}'.format('\033[1m'+"[CHALLENGE 2]"+'\033[0m'))
+print("\t\t\t\t    [CHALLENGE 2]")
 time.sleep(1)
-print('{:^92s}'.format("**Grade of the Finals**"))
+print("\t\t\t\t**Grade of the Finals**")
 time.sleep(2)
-print("AMY: You will need to insert the marks for the five(5) questions in your Final Exam.")
+print("\nAMY: You will need to insert the marks for the five(5) questions in your Final Exam.")
 time.sleep(2)
 print("AMY: I will calculate your grade.")
 time.sleep(2)
@@ -80,7 +91,7 @@ for i in range(1,6):
             print("Please enter an integer between 0 and 100.")
             
     while mark<0 or mark>100:
-        print("[",i,"]")
+        print("Please enter valid mark for", i)
         mark=int(input("Enter value between 0 and 100: "))
         
     lis.append(mark)
@@ -96,7 +107,7 @@ for i in range(1,6):
         grade='F'
     print("AMY: Grade for question", i, "is ",grade)
 time.sleep(1)
-print('\033[1m'+"\nCalculating overall grade......"+'\033[0m')
+print("\nCalculating overall grade......")
 overall=(sum(lis))/5
 if overall>89:
     grade='A'
@@ -117,11 +128,11 @@ print("AMY: Wish you all the best next time")
 time.sleep(5)
 #CHALLENGE 3
 print("\n\n\n")
-print('{:^100s}'.format('\033[1m'+"[CHALLENGE 3]"+'\033[0m'))
+print("\t\t\t\t  [CHALLENGE 3]")
 d=enchant.Dict("en_US")
 char_list=list(string.ascii_lowercase)
 time.sleep(1)
-print('{:^92s}'.format("**Guess the Word**"))
+print("\t\t\t\t**Guess the Word**")
 time.sleep(1)
 print("AMY: Let's start the word game.")
 time.sleep(1)
