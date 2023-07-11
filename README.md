@@ -6,5 +6,5 @@ https://raffles-university.edu.my/international-python-coding-school-challenge-2
 I am Teo Jun Jia, please enjoy my project by following method: (in your virtual env, python v3.9.13)
 ```
 pip install -r requirements.txt
-python JunJia_Teo.py
+python main.py
 ```
